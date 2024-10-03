@@ -1,5 +1,5 @@
 <template>
-  <div style="margin:auto; max-width: 70%;">
+  <div>
     <Panel header="QPS calculator | How many QPS is it?">
       <p class="m-0">
         Input Requests count and Period then the average traffic count for different time spans will be calculated for you.
@@ -17,7 +17,7 @@
       </FloatLabel>
     </InputGroup>
     
-    <DataTable :value="calculations" tableStyle="min-width: 50rem">
+    <DataTable :value="calculations">
       <Column field="count" header="Average"></Column>
       <Column field="unit" header="Unit">
       </Column>
@@ -55,4 +55,10 @@ function calculate(cnt: number, unit: string) {
 }
 </script>
 
-<style></style>
+<style>
+div[id=__nuxt] {
+  max-width: 100ch;
+  min-width: 50ch;
+  margin:auto;
+}
+</style>
