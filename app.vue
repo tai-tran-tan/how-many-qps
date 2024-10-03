@@ -1,7 +1,7 @@
 <template>
   <div>
     <Panel header="QPS calculator | How many QPS is it?">
-      <p class="m-0">
+      <p class="hidden md:block m-0">
         Input Requests count and Period then the average traffic count for different time spans will be calculated for you.
       </p>
     </Panel>
@@ -26,7 +26,6 @@
 </template>
 <script setup lang="ts">
 import parse from 'parse-duration'
-import Duration from 'duration'
 const count = useState('count', () => 10_000)
 const period = useState('period', () => '3w 4d 5h 6m 7s 8ms')
 const UNITS = [
